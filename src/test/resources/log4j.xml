@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+  <!--=================  Appender definitions  ==============================-->
+
+  <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+    <param name="Threshold" value="TRACE"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d: %-6p: [%t] %c{1}: %m%n"/>
+    </layout>
+  </appender>
+
+  <logger name="com.jeff.porter">
+    <level value="TRACE"/>
+  </logger>
+
+  <logger name="org.springframework">
+    <level value="TRACE"/>
+  </logger>
+
+  <logger name="com.ibatis">
+    <level value="TRACE"/>
+  </logger>
+
+  <logger name="java.sql">
+    <level value="TRACE"/>
+  </logger>
+
+  <logger name="org.apache">
+    <level value="TRACE"/>
+  </logger>
+
+  <!--=================  Root Logger  ==============================-->
+
+  <root>
+    <level value="TRACE"/>
+    <appender-ref ref="CONSOLE"/>
+  </root>
+
+</log4j:configuration>
